@@ -42,3 +42,7 @@ sudo chown -R bakhtiyar /usr/share/geoserver
 cd bin
 
 ./startup.sh
+
+# open browser http://your_host_ip:8080/geoserver/
+# username: admin
+# password: geoserver
