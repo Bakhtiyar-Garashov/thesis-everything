@@ -23,13 +23,10 @@ def tile_to_envelope(tile):
     worldMercMax = 20037508.3427892
     worldMercMin = -1 * worldMercMax
     worldMercSize = worldMercMax - worldMercMin
-    # Width in tiles
     worldTileSize = 2 ** tile["zoom"]
     # Tile width in EPSG:3857
     tileMercSize = worldMercSize / worldTileSize
-    # Calculate geographic bounds from tile coordinates
-    # XYZ tile coordinates are in "image space" so origin is
-    # top-left, not bottom right
+    # calculate the bbox for the envelope
     env = dict()
     env["xmin"] = worldMercMin + tileMercSize * tile["x"]
     env["xmax"] = worldMercMin + tileMercSize * (tile["x"] + 1)
@@ -70,12 +67,10 @@ def envelope_to_sql(env):
     return sql_tmpl.format(**tbl)
 
 
-# Run tile query SQL and return error on failure conditions
-
 
 def sql_to_pbf(sql):
     DATABASE_CONNECTION = None
-    # Make and hold connection to database
+    # connect to the database
     if not DATABASE_CONNECTION:
         try:
             DATABASE_CONNECTION = psycopg2.connect(**DATABASE)
@@ -83,7 +78,7 @@ def sql_to_pbf(sql):
             print("Error while connecting to PostgreSQL", error)
             return None
 
-    # Query for MVT
+    # fetch tile
     with DATABASE_CONNECTION.cursor() as cur:
         cur.execute(sql)
         if not cur:
