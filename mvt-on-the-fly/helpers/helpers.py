@@ -69,17 +69,17 @@ def envelope_to_sql(env):
 
 
 def sql_to_pbf(sql):
-    DATABASE_CONNECTION = None
+    connection = None
     # connect to the database
-    if not DATABASE_CONNECTION:
+    if not connection:
         try:
-            DATABASE_CONNECTION = psycopg2.connect(**DATABASE)
+            connection = psycopg2.connect(**DATABASE)
         except (Exception, psycopg2.Error) as error:
             print("Error while connecting to PostgreSQL", error)
             return None
 
     # fetch tile
-    with DATABASE_CONNECTION.cursor() as cur:
+    with connection.cursor() as cur:
         cur.execute(sql)
         if not cur:
             print("No data found")
