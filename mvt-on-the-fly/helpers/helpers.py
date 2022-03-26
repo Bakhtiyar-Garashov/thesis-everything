@@ -1,5 +1,5 @@
 import psycopg2
-from config import DATABASE, TABLE
+from config.config import DATABASE, TABLE
 
 # validate if the tile is correct
 
