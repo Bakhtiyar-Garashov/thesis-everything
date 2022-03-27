@@ -7,3 +7,7 @@
 
 
 gsutil -m cp -r soil_12c_drop_denser-8-16 gs://eesti-soil-vtiles
+
+# URL to retrieve tiles 
+# https://storage.googleapis.com/eesti-soil-vtiles/soil_12c_drop_denser-8-16/{z}/{x}/{y}.pbf
+# no security - public access :)
