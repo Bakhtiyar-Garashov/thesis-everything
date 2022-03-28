@@ -1,0 +1,29 @@
+{
+    "options": {
+        "paths": {
+            "root": "",
+            "fonts": "../fonts",
+            "mbtiles": "../data",
+            "styles": "../styles",
+            "sprites": "../sprites"
+        }
+    },
+    "data": {
+        "Soilmap": {
+            "mbtiles": "eesti_soilmap.mbtiles"
+        },
+        "e_203_vooluveekogu_j": {
+            "mbtiles": "e_203_vooluveekogu_j.mbtiles"
+        },
+        "e_305_puittaimestik_a": {
+            "mbtiles": "e_305_puittaimestik_a.mbtiles"
+        },
+        "e_305_puittaimestik_p": {
+            "mbtiles": "e_305_puittaimestik_p.mbtiles"
+        }
+      
+    },
+    "styles": {
+        
+    }
+}
