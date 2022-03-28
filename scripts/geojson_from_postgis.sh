@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # change the input database credentials with your own
 

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # create a bucket and copy gsutil URI
 # assuimg that you already have gsutil cli downloaded
